@@ -1,5 +1,11 @@
 {
-    "rewrites": [],
-    "cleanUrls": false,
-    "trailingSlash": false
+    "routes": [
+        {
+            "handle": "filesystem"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/index.html"
+        }
+    ]
 }
