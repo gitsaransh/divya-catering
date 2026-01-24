@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Divya Catering & Puja Bangalore</title>
+    <meta name="description"
+        content="View our gallery of catering setups, puja arrangements, and delicious satvik food. We bring excellence to every event in Bangalore.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <!-- Same Header -->
+        <nav class="nav container">
+            <a href="/" class="logo"><span class="logo-text">Divya</span><span class="logo-subtext">Catering &
+                    Puja</span></a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/gallery.html" class="active">Gallery</a></li>
+                <li><a href="/testimonials.html">Testimonials</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn" id="mobileMenuBtn"><span></span><span></span><span></span></div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Our Gallery</h1>
+                <p>Moments of faith and flavors of tradition.</p>
+            </div>
+        </section>
+
+        <section class="gallery-section container">
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="catering">Catering Setups</button>
+                <button class="filter-btn" data-filter="puja">Pooja Events</button>
+                <button class="filter-btn" data-filter="food">Food Close-ups</button>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Catering 1 -->
+                <div class="gallery-item" data-category="catering">
+                    <img src="/gallery_catering_setup.png" alt="Catering Buffet Setup">
+                    <div class="gallery-overlay">
+                        <span>Buffet Setup - Housewarming</span>
+                    </div>
+                </div>
+                <!-- Puja 1 -->
+                <div class="gallery-item" data-category="puja">
+                    <img src="/gallery_pooja_setup.png" alt="Traditional Puja Arrangement">
+                    <div class="gallery-overlay">
+                        <span>Pooja Arrangement - Satyanarayan Puja</span>
+                    </div>
+                </div>
+                <!-- Food 1 -->
+                <div class="gallery-item" data-category="food">
+                    <img src="/gallery_food_closeups.png" alt="Satvik Food Platter">
+                    <div class="gallery-overlay">
+                        <span>South Indian Satvik Thali</span>
+                    </div>
+                </div>
+                <!-- Repeat or add more if needed, for now using placeholders for others -->
+                <div class="gallery-item" data-category="catering">
+                    <img src="/hero_catering_puja.png" alt="Event Catering">
+                    <div class="gallery-overlay">
+                        <span>Event Catering - Naming Ceremony</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-50">
+                <a href="https://wa.me/919999999999?text=Hi, I saw your gallery and want to enquiry about your services."
+                    class="btn btn-primary">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+                        class="btn-icon">
+                    Book Your Event
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <!-- Footer Content -->
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <a href="/" class="logo"><span class="logo-text">Divya</span></a>
+                <p>Bringing tradition and taste to your doorstep in Bangalore.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>📞 +91 99999 99999</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Divya Catering & Puja Services. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919999999999" class="whatsapp-sticky">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
