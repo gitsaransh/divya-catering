@@ -57,3 +57,12 @@ The primary goal of the site is **Lead Generation via WhatsApp**, featuring prom
 - Source Code (HTML, CSS, JS)
 - Optimized Asset Library (`/public`, `/project_docs`)
 - 5-Page Website (Home, Services, Gallery, Testimonials, Contact)
+
+---
+
+## 🌐 Deployment Status
+- **Platform**: GitHub Pages
+- **URL**: [https://gitsaransh.github.io/divya-catering/](https://gitsaransh.github.io/divya-catering/)
+- **Status**: Live ✅
+- **CI/CD**: Hosted via GitHub Actions (Vite Build Workflow)
+
