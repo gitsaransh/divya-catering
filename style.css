@@ -148,7 +148,7 @@ h3 {
     min-height: 500px;
     display: flex;
     align-items: center;
-    background: url('/divya-catering/hero_catering_puja.png') no-repeat center center/cover;
+    background: url('images/hero_catering_puja.png') no-repeat center center/cover;
     color: var(--white);
     text-align: center;
 }
