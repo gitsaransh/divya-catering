@@ -51,19 +51,23 @@
             <div class="contact-container">
                 <div class="enquiry-form-side">
                     <h3>Send an Enquiry</h3>
-                    <form id="enquiryForm" class="enquiry-form">
+                    <form id="enquiryForm" class="enquiry-form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        <input type="hidden" name="subject" value="New Catering Lead from Website">
+
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number"
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name"
                                 required>
                         </div>
                         <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control"
+                                placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
                             <label for="service">Service Type</label>
-                            <select id="service" class="form-control">
+                            <select id="service" name="service" class="form-control">
                                 <option value="catering">Catering Only</option>
                                 <option value="puja">Puja Only</option>
                                 <option value="both">Both (Catering & Puja)</option>
@@ -71,15 +75,15 @@
                         </div>
                         <div class="form-group">
                             <label for="date">Event Date</label>
-                            <input type="date" id="date" class="form-control" required>
+                            <input type="date" id="date" name="date" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="guests">Guest Count (approx)</label>
-                            <input type="number" id="guests" class="form-control" placeholder="e.g. 50">
+                            <input type="number" id="guests" name="guests" class="form-control" placeholder="e.g. 50">
                         </div>
                         <div class="form-group">
                             <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" rows="4"
+                            <textarea id="message" name="message" class="form-control" rows="4"
                                 placeholder="Tell us about your event"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary w-100">Submit Enquiry</button>
@@ -110,6 +114,15 @@
                         <span class="area-tag">Malleshwaram</span>
                         <span class="area-tag">Electronic City</span>
                         <span class="area-tag">Hebbal</span>
+                    </div>
+
+                    <div class="map-container"
+                        style="margin-top: 30px; border-radius: 15px; overflow: hidden; height: 250px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.886539092!2d77.4908551!3d12.9539599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
 
                     <div class="office-info mt-50">

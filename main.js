@@ -22,18 +22,48 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Form handling (if on contact page)
 const enquiryForm = document.getElementById('enquiryForm');
 if (enquiryForm) {
-    enquiryForm.addEventListener('submit', (e) => {
+    enquiryForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        
-        // Show thank you message
-        const formContainer = enquiryForm.parentElement;
-        const thankYouMessage = document.getElementById('thankYouMessage');
-        
-        enquiryForm.style.display = 'none';
-        thankYouMessage.style.display = 'block';
-        
-        // Scroll to message
-        thankYouMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        const submitBtn = enquiryForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerText;
+        submitBtn.innerText = 'Sending...';
+
+        const formData = new FormData(enquiryForm);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    // Show thank you message
+                    const formContainer = enquiryForm.parentElement;
+                    const thankYouMessage = document.getElementById('thankYouMessage');
+
+                    enquiryForm.style.display = 'none';
+                    thankYouMessage.style.display = 'block';
+
+                    // Scroll to message
+                    thankYouMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    console.log(response);
+                    alert('Something went wrong. Please WhatsApp us instead.');
+                    submitBtn.innerText = originalText;
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                alert('Something went wrong. Please WhatsApp us instead.');
+                submitBtn.innerText = originalText;
+            });
     });
 }
 
