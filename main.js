@@ -76,3 +76,46 @@ window.addEventListener('scroll', () => {
         header.classList.remove('scrolled');
     }
 });
+
+// CMS Logic: Load Testimonials
+async function loadTestimonials() {
+    const container = document.getElementById('testimonial-container');
+    const loader = document.getElementById('testimonial-loader');
+
+    if (!container) return; // Not on testimonials page
+
+    try {
+        const response = await fetch('content/testimonials.json');
+        if (!response.ok) throw new Error('Failed to load reviews');
+
+        const data = await response.json();
+        const reviews = data.reviews_list || [];
+
+        loader.style.display = 'none';
+
+        if (reviews.length === 0) {
+            container.innerHTML = '<p class="text-center">No reviews yet.</p>';
+            return;
+        }
+
+        container.innerHTML = reviews.map(review => `
+            <div class="testimonial-card-detailed">
+                <div class="testimonial-photo">${review.photo_icon || '👤'}</div>
+                <div class="testimonial-text">
+                    <div class="event-tag">${review.event}</div>
+                    <h4>${review.name}</h4>
+                    <div class="star-rating">${'★'.repeat(review.rating || 5)}</div>
+                    <p>"${review.text}"</p>
+                </div>
+            </div>
+        `).join('');
+
+    } catch (error) {
+        console.error(error);
+        if (loader) loader.innerText = 'Could not load reviews at this time.';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadTestimonials();
+});

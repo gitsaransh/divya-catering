@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: gitsaransh/divya-catering # Path to your GitHub repository
+  branch: main # Branch to update (optional; defaults to master)
+
+media_folder: "public/images" # Media files will be stored in the repo under public/images
+public_folder: "/images" # The src attribute for uploaded media will begin with /images
+
+collections:
+  - name: "testimonials" # Used in routes, e.g., /admin/collections/blog
+    label: "Testimonials" # Used in the UI
+    files:
+      - name: "reviews"
+        label: "Customer Reviews"
+        file: "public/content/testimonials.json"
+        
+        fields:
+          - {label: "Reviews List", name: "reviews_list", widget: "list", fields: [
+              {label: "Customer Name", name: "name", widget: "string"},
+              {label: "Event Type", name: "event", widget: "string"},
+              {label: "Rating (1-5)", name: "rating", widget: "number", value_type: "int", min: 1, max: 5},
+              {label: "Icon/Emoji", name: "photo_icon", widget: "string", default: "👤"},
+              {label: "Review Text", name: "text", widget: "text"}
+            ]}

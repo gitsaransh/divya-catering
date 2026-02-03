@@ -1,0 +1,32 @@
+{
+    "reviews_list": [
+        {
+            "name": "Ramesh & Sandhya",
+            "event": "Housewarming (Griha Pravesh)",
+            "rating": 5,
+            "photo_icon": "👤",
+            "text": "We were worried about managing both the puja and the lunch for 100 people. Divya Catering took all the stress away. The pandit was very knowledgeable and explained everything. The Pulao and Obbattu were the talk of the day!"
+        },
+        {
+            "name": "Priya Sharma",
+            "event": "Naming Ceremony",
+            "rating": 5,
+            "photo_icon": "👩",
+            "text": "The food was incredibly fresh and followed all Satvik requirements as requested. Punctual, professional, and very hygienic. I will definitely book them again for future events."
+        },
+        {
+            "name": "Venkatesh Prasad",
+            "event": "Satyanarayan Puja",
+            "rating": 5,
+            "photo_icon": "👨",
+            "text": "Rare to find someone who gets the rituals so right while providing high-quality catering. A one-stop solution for traditional functions in Bangalore."
+        },
+        {
+            "name": "Saraswathi Amma",
+            "event": "Deepavali Festival Feast",
+            "rating": 5,
+            "photo_icon": "👵",
+            "text": "The taste reminded me of traditional home-cooked feasts. Very authentic flavors and the staff was extremely courteous. God bless."
+        }
+    ]
+}
