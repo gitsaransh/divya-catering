@@ -85,7 +85,9 @@ async function loadTestimonials() {
     if (!container) return; // Not on testimonials page
 
     try {
-        const response = await fetch('content/testimonials.json');
+        // Fix for GitHub Pages: content is in /divya-catering/content/...
+        // We use a relative path that works both locally and on GitHub Pages
+        const response = await fetch('./content/testimonials.json');
         if (!response.ok) throw new Error('Failed to load reviews');
 
         const data = await response.json();
