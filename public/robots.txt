@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://gitsaransh.github.io/divya-catering/sitemap.xml
+
+# Disallow admin and config files
+Disallow: /admin/
+Disallow: /content/
+Disallow: /*.json$
