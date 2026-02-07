@@ -2,7 +2,7 @@
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const navLinks = document.querySelector('.nav-links');
 
-if (mobileMenuBtn) {
+if (mobileMenuBtn && navLinks) {
     mobileMenuBtn.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         mobileMenuBtn.classList.toggle('open');
@@ -12,10 +12,15 @@ if (mobileMenuBtn) {
 // Smooth scroll implementation (if needed for internal links)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
@@ -85,9 +90,13 @@ async function loadTestimonials() {
     if (!container) return; // Not on testimonials page
 
     try {
-        // Fix for GitHub Pages: content is in /divya-catering/content/...
-        // We use a relative path that works both locally and on GitHub Pages
-        const response = await fetch('./content/testimonials.json');
+        // Construct path that works in both dev and production
+        // In production (GitHub Pages), base is /divya-catering/
+        // In dev, base is /
+        const basePath = document.querySelector('base')?.href || window.location.origin + window.location.pathname.split('/').slice(0, -1).join('/') + '/';
+        const jsonPath = new URL('content/testimonials.json', basePath).href;
+
+        const response = await fetch(jsonPath);
         if (!response.ok) throw new Error('Failed to load reviews');
 
         const data = await response.json();

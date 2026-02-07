@@ -3,6 +3,7 @@ import { resolve } from 'path';
 
 export default defineConfig({
     base: '/divya-catering/',
+    publicDir: 'public', // Ensure public folder is copied to dist
     build: {
         rollupOptions: {
             input: {
@@ -13,5 +14,7 @@ export default defineConfig({
                 contact: resolve(__dirname, 'contact.html'),
             },
         },
+        // Copy assets properly
+        assetsInlineLimit: 0,
     },
 });
